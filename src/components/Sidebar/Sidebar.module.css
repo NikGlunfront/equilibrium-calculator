@@ -1,0 +1,100 @@
+.ContentWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    padding: 50px 20px;
+    background-color: #F6F7FB;
+    box-shadow: 5px 0px 15px -5px rgba(34, 60, 80, 0.6) inset;
+}
+
+.Menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.Item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-width: 90px;
+    min-height: 90px;
+    max-width: 90px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.Item svg {
+    font-size: 20px;
+    color: #9BAAD3;
+    transition: all .3s linear;
+}
+
+.Item span {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #9BAAD3;
+    transition: all .3s linear;
+}
+
+.ActiveItem {
+    background: #FF6647;
+    box-shadow: 0px 10px 20px rgba(88, 92, 229, 0.65);
+    border-radius: 10px;
+}
+
+.ActiveItem span {
+    color: #fff;
+}
+
+.ActiveItem svg {
+    color: #fff;
+}
+
+.Langs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+.LangItemsBox {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #393D46;
+    margin-top: 15px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0px 10px 20px rgba(88, 92, 229, 0.65);
+}
+
+.LangItem {
+    padding: 15px 5px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #9BAAD3;
+    text-align: center;
+    border-top: 1px solid #393D46;
+    transition: all .3s linear;
+}
+
+.ActiveLangItem {
+    background-color: #FF6647;
+    color: #fff;
+}
+
+.LangItem:first-child {
+    border-top: none;
+}

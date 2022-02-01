@@ -5,12 +5,14 @@ import Header from './components/Header/Header';
 // import your fontawesome library
 import './UI/FontAwesome/fontawesome';
 import './css/App.css'
+import Sidebar from './components/Sidebar/Sidebar';
 
 
 const App = () => {
     return (
         <div className='page-wrapper'>
-            <Header />
+            
+            <Sidebar />
 
             <AppRouter/>
 
