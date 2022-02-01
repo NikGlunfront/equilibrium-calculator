@@ -1,11 +1,10 @@
 import { Select } from 'antd';
 import React, { useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { enMenuList, MenuList } from '../../utils/MenuList';
-import style from './Navbar.module.css'
+import style from './Navbar.module.css';
 
 const Navbar = () => {
-    const isRusLang = true;
     const navigate = useNavigate()
     const location = useLocation()
     const [langSelected, setLangSelected] = useState('rus');
@@ -16,7 +15,6 @@ const Navbar = () => {
 
     const handleLanguageSelect = (value) => {
         setLangSelected(value)
-        console.log(value)
     }
 
     return (
@@ -27,7 +25,10 @@ const Navbar = () => {
                 <div className={style.Navbar}>
                     <ul className={style.NavbarList}>
                         {MenuList.map(link => 
-                            <li key={link.key} className={location.pathname === link.navigateTo && style.ActiveNavLink}>
+                            <li 
+                            key={link.key} 
+                            className={location.pathname === link.navigateTo ? style.NavbarLink + ' ' + style.ActiveNavLink : style.NavbarLink}
+                            >
                                 <div onClick={() => handleNavigation(link.navigateTo)}>
                                     {link.text}
                                 </div>
@@ -52,7 +53,10 @@ const Navbar = () => {
                 <div className={style.Navbar}>
                     <ul className={style.NavbarList}>
                         {enMenuList.map(link => 
-                            <li key={link.key} className={location.pathname === link.navigateTo && style.ActiveNavLink}>
+                            <li 
+                            key={link.key} 
+                            className={location.pathname === link.navigateTo ? style.NavbarLink + ' ' + style.ActiveNavLink : style.NavbarLink}
+                            >
                                 <div onClick={() => handleNavigation(link.navigateTo)}>
                                     {link.text}
                                 </div>

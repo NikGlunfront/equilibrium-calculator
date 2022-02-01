@@ -8,7 +8,7 @@
     display: flex;
 }
 
-.NavbarList li {
+.NavbarLink {
     padding: 10px 15px;
     font-size: 20px;
     min-width: 150px;
@@ -17,7 +17,9 @@
     transition: all .3s linear;
 }
 
-.NavbarList li::after {
+
+
+.NavbarLink::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -30,11 +32,11 @@
     transition: all .3s linear;
 }
 
-.NavbarList li.ActiveNavLink {
+.NavbarLink.ActiveNavLink {
     background-color: rgba(199, 150, 137, 0.3);
 }
 
-.NavbarList li.ActiveNavLink::after {
+.NavbarLink.ActiveNavLink::after {
     width: 100%;
     z-index: 10;
 }
@@ -44,7 +46,50 @@
     margin-left: 50px;
 }
 
+
 .NavbarLangs div {
     cursor: pointer;
     margin: 0 10px;
 }
+
+.NavbarMobile {
+    display: none;
+    padding: 15px 0;
+}
+
+.BurgerButton {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.BurgerButton span {
+    width: 22px;
+    height: 3px;
+    margin: 2px 0;
+    background-color: #000;
+}
+
+@media screen and (max-width: 992px) {
+    .NavbarLink {
+        font-size: 18px;
+        min-width: 0;
+    }
+
+    .NavbarLangs {
+        margin-left: 15px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .Navbar {
+        display: none;
+    }
+    
+    .NavbarMobile {
+        display: flex;
+    }
+
+}
+
