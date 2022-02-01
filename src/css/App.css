@@ -11,6 +11,7 @@
     flex-direction: column;
     position: relative;
     min-height: 100vh;
+    height: 1500px;
     padding: 50px 0 0 180px;
     background-color: #fcfaf7;
 }
@@ -18,4 +19,10 @@
 .ant-select {
     font-weight: 700;
     font-size: 16px;
+}
+
+@media screen and (max-width: 992px) {
+    .page-wrapper {
+        padding: 50px 0;
+    }
 }

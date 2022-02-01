@@ -1,5 +1,5 @@
 .ContentWrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -20,18 +20,41 @@
 
 .Item {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     padding: 10px;
-    min-width: 90px;
-    min-height: 90px;
-    max-width: 90px;
+    width: 90px;
+    height: 90px;
+    flex: 0 0 90px;
     border-radius: 10px;
     background-color: #fff;
     margin: 20px 0;
     cursor: pointer;
+    z-index: 2;
     transition: all .3s linear;
+}
+
+.Item::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-left: 0px solid #FF6647;
+	border-bottom: 15px solid transparent;
+    transform: translate(100%, -50%);
+    z-index: 0;
+    transition: all .2s linear;
+}
+
+.ItemInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .Item svg {
@@ -52,6 +75,10 @@
     background: #FF6647;
     box-shadow: 0px 10px 20px rgba(88, 92, 229, 0.65);
     border-radius: 10px;
+}
+
+.ActiveItem::after {
+    border-left: 15px solid #FF6647;
 }
 
 .ActiveItem span {
@@ -96,5 +123,122 @@
 }
 
 .LangItem:first-child {
-    border-top: none;
+    border: none;
+}
+
+@media screen and (max-width: 992px) {
+    .ContentWrapper {
+        padding: 0 30px;
+        top: 100%;
+        height: auto;
+        width: 100%;
+        transform: translate(0, -100%);
+        box-shadow: none;
+        border-top: 1px solid #393D46;
+    }
+
+    .ContentWrapper, .Menu, .LangItemsBox {
+        flex-direction: row;
+    }
+
+    .ContentWrapper {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .Menu {
+        flex: 1;
+        max-width: 480px;
+        justify-content: space-between;
+    }
+
+    .Item {
+        margin: 0 10px;
+        width: 100px;
+        height: 70px;
+        flex: 0 0 100px;
+        border-radius: 0;
+    }
+
+    .Item span {
+        font-size: 14px;
+    }
+
+    .Item::after {
+        top: 0;
+        left: 50%;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 0 solid #FF6647;
+        transform: translate(-50%, -100%);
+    }
+
+    .ActiveItem::after {
+        border-bottom: 15px solid #FF6647;
+    }
+
+    .Langs {
+        margin-top: 0;
+    }
+
+    .LangItemsBox {
+        margin-top: 0;
+    }
+
+    .Langs span,
+    .Langs svg {
+        display: none;
+    }
+
+    .LangItem {
+        border: none;
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ContentWrapper {
+        padding: 0;
+    }
+
+    .Item {
+        margin: 0;
+        width: unset;
+        height: 50px;
+        flex: 0 0 calc(100% / 4);
+        border-radius: 0;
+        border-left: 1px solid #393D46;
+    }
+
+    .Item span {
+        font-size: 9px;
+        margin-top: 5px;
+    }
+
+    .Item svg {
+        font-size: 16px;
+    }
+
+    .Langs {
+        display: none;
+    }
+
+    .Menu {
+        flex: 1;
+        max-width: 100%;
+        justify-content: space-between;
+    }
+
+    .Item::after {
+        top: 0;
+        left: 50%;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 0 solid #FF6647;
+        transform: translate(-50%, -100%);
+    }
+
+    .ActiveItem::after {
+        border-bottom: 10px solid #FF6647;
+    }
 }

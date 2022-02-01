@@ -30,8 +30,10 @@ const Sidebar = () => {
                                 className={location.pathname === item.navigateTo ? style.Item + ' ' + style.ActiveItem : style.Item}
                                 onClick={() => handleNavigation(item.navigateTo)}>
                                 
-                                <FontAwesomeIcon icon={item.icon} />
-                                <span>{item.text}</span>
+                                <div className={style.ItemInner}>
+                                    <FontAwesomeIcon icon={item.icon} />
+                                    <span>{item.text}</span>
+                                </div>
 
                             </li>    
                         )}
@@ -61,9 +63,11 @@ const Sidebar = () => {
                                 key={item.key}
                                 className={location.pathname === item.navigateTo ? style.Item + ' ' + style.ActiveItem : style.Item}
                                 onClick={() => handleNavigation(item.navigateTo)}>
-                                
-                                <FontAwesomeIcon icon={item.icon} />
-                                <span>{item.text}</span>
+
+                                <div className={style.ItemInner}>
+                                    <FontAwesomeIcon icon={item.icon} />
+                                    <span>{item.text}</span>
+                                </div>
 
                             </li>    
                         )}
