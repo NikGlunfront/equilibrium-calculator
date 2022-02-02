@@ -1,7 +1,5 @@
-// import { AuthActionCreators } from "./auth/actionCreators";
-// import { EventActionCreators } from "./event/actionCreators";
+import { LanguageActionCreators } from "./language/actionCreators";
 
-// export const allActionCreators = {
-//     ...AuthActionCreators,
-//     ...EventActionCreators
-// }
+export const allActionCreators = {
+    ...LanguageActionCreators,
+}

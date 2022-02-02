@@ -35,6 +35,10 @@
     transition: all .3s linear;
 }
 
+.ItemLang {
+    display: none;
+}
+
 .Item::after {
     content: "";
     position: absolute;
@@ -100,7 +104,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    border: 1px solid #393D46;
+    border: 1px solid #9BAAD3;
     margin-top: 15px;
     overflow: hidden;
     width: 100%;
@@ -113,7 +117,7 @@
     cursor: pointer;
     color: #9BAAD3;
     text-align: center;
-    border-top: 1px solid #393D46;
+    border-top: 1px solid #9BAAD3;
     transition: all .3s linear;
 }
 
@@ -134,7 +138,7 @@
         width: 100%;
         transform: translate(0, -100%);
         box-shadow: none;
-        border-top: 1px solid #393D46;
+        border-top: 1px solid #9BAAD3;
     }
 
     .ContentWrapper, .Menu, .LangItemsBox {
@@ -192,7 +196,8 @@
 
     .LangItem {
         border: none;
-        min-width: 100px;
+        min-width: 80px;
+        border-left: 1px solid #9BAAD3;
     }
 }
 
@@ -205,9 +210,14 @@
         margin: 0;
         width: unset;
         height: 50px;
-        flex: 0 0 calc(100% / 4);
+        flex: 0 0 calc(100% / 5);
         border-radius: 0;
-        border-left: 1px solid #393D46;
+        border-left: 1px solid #9BAAD3;
+    }
+
+    .ItemLang {
+        display: flex;
+        position: relative;
     }
 
     .Item span {
@@ -240,5 +250,36 @@
 
     .ActiveItem::after {
         border-bottom: 10px solid #FF6647;
+    }
+
+    .MobileLangsItem {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        border: 1px solid #9BAAD3;
+        width: 200px;
+        transform: translate(100%, calc(-100% - 10px));
+        transition: all .3s linear;
+    }
+
+    .MobileLangsItem .LangItem {
+        border: none;
+        border-top: 1px solid #9BAAD3;
+    }
+    .MobileLangsItem .LangItem:first-child {
+        border-top: none;
+    }
+
+
+    .ActiveMobileLangsItem {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-10px, calc(-100% - 10px));
     }
 }
