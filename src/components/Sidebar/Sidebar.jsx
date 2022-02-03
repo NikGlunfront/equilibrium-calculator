@@ -6,6 +6,7 @@ import { useActions } from '../../hooks/useActions';
 import style from './Sidebar.module.css'
 import { DATA_LANGUAGES } from '../../data/LanguagesList';
 import { useState } from 'react';
+import { DATA_SIDEBAR } from '../../data/Sidebar';
 
 const Sidebar = () => {
     const location = useLocation()
@@ -58,7 +59,7 @@ const Sidebar = () => {
                         
                         <div className={style.ItemInner}>
                             <FontAwesomeIcon icon={faLanguage} />
-                            <span>Язык</span>
+                            <span>{DATA_SIDEBAR[language].lang}</span>
                             <div 
                                 className={isVisibleLangsMobile ? style.MobileLangsItem + " " + style.ActiveMobileLangsItem : style.MobileLangsItem}>
                                 {Object.values(DATA_LANGUAGES).map(lang => 
@@ -75,7 +76,7 @@ const Sidebar = () => {
                     </li> 
                 </ul>
                 <div className={style.Langs}>
-                    <span>Выбранный язык:</span>
+                    <span>{DATA_SIDEBAR[language].choose}</span>
                     <FontAwesomeIcon icon={faLanguage} style={{fontSize: '30px', color: '#9BAAD3'}}/>
 
                     <div className={style.LangItemsBox}>
