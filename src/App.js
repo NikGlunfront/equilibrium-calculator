@@ -5,11 +5,13 @@ import Footer from './components/Footer/Footer';
 import './UI/FontAwesome/fontawesome';
 import './css/App.css'
 import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header/Header';
 
 
 const App = () => {
     return (
         <div className='page-wrapper'>
+            <Header />
             
             <Sidebar />
 

@@ -8,7 +8,7 @@
     min-width: 180px;
     padding: 50px 20px;
     background-color: #F6F7FB;
-    box-shadow: 5px 0px 15px -5px rgba(34, 60, 80, 0.6) inset;
+    box-shadow: 5px 0px 30px 0 rgba(34, 60, 80, 0.6) inset;
     z-index: 999;
 }
 
@@ -272,9 +272,16 @@
     .MobileLangsItem .LangItem {
         border: none;
         border-top: 1px solid #9BAAD3;
+        background-color: #fff;
     }
-    .MobileLangsItem .LangItem:first-child {
-        border-top: none;
+
+    .MobileLangsItem .LangItem {
+        border: none;
+        border-top: 1px solid #9BAAD3;
+        background-color: #fff;
+    }
+    .MobileLangsItem .ActiveLangItem {
+        background-color: #FF6647;
     }
 
 

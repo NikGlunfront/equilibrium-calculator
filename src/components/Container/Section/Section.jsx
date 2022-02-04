@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../Container';
 import style from './Section.module.css'
 
-const Section = ({children}) => {
+const Section = ({children, isFirst}) => {
 
     let subComponentList = Object.keys(Section);
 
@@ -14,7 +14,7 @@ const Section = ({children}) => {
 
 
     return (
-        <section className={style.PageSection}>
+        <section className={isFirst ? style.PageSection + " " + style.FirstPageSection : style.PageSection}>
             <Container>
                 {subComponents.map((component) => component)}
             </Container>

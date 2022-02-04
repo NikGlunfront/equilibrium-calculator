@@ -1,42 +1,58 @@
-export const DATA_TALENTS_INPUTS = {
+import expBooks from '../../img/talents/exp-books.jpg';
+import expToms from '../../img/talents/exp-toms.jpg';
+import bigCase from '../../img/talents/case.jpg';
+import atkBadge from '../../img/talents/atk-badge.jpg';
+import naukaBadge from '../../img/talents/nauka-badge.jpg';
+import heartBadge from '../../img/talents/heart-badge.jpg';
+import expCase from '../../img/talents/exp-case.jpg';
+import politikaBadge from '../../img/talents/politika-badge.jpg';
+import sixBadge from '../../img/talents/six-badge.jpg';
+
+const DATA_TALENTS_INPUTS = {
     "rus": [
-        {text: "Альманах Знаний", img: '../img/talents/exp-books.jpg'},
-        {text: "Приказ Изучения", img: '../img/talents/exp-case.jpg'},
-        {text: "Случ. приказ-изучения", img: '../img/talents/exp-toms.jpg'},
-        {text: "Шкатулка Сфер", img: '../img/talents/case.jpg'},
-        {text: "Жетон Тактики", img: '../img/talents/atk-badge.jpg'},
-        {text: "Жетон Науки", img: '../img/talents/nauka-badge.jpg'},
-        {text: "Жетон Культуры", img: '../img/talents/heart-badge.jpg'},
-        {text: "Жетон Политики", img: '../img/talents/politika-badge.jpg'},
-        {text: "Жетон Могущества", img: '../img/talents/six-badge.jpg'},
+        {text: "Альманах Знаний", img: expBooks},
+        {text: "Приказ Изучения", img: expToms},
+        {text: "Случ. приказ-изучения", img: expCase},
+        {text: "Шкатулка Сфер", img: bigCase},
+        {text: "Жетон Тактики", img: atkBadge},
+        {text: "Жетон Науки", img: naukaBadge},
+        {text: "Жетон Культуры", img: heartBadge},
+        {text: "Жетон Политики", img: politikaBadge},
+        {text: "Жетон Могущества", img: sixBadge},
     ],
 
     "eng": [
-        {text: "Book XP Pack", img: '../img/talents/exp-books.jpg'},
-        {text: "Book Xp Chest", img: '../img/talents/exp-case.jpg'},
-        {text: "Book Xp Booster", img: '../img/talents/exp-toms.jpg'},
-        {text: "Orb Box", img: '../img/talents/case.jpg'},
-        {text: "Military Badge", img: '../img/talents/atk-badge.jpg'},
-        {text: "Research Badge", img: '../img/talents/nauka-badge.jpg'},
-        {text: "Prestige Badge", img: '../img/talents/heart-badge.jpg'},
-        {text: "Politics Badge", img: '../img/talents/politika-badge.jpg'},
-        {text: "Almighty Badge", img: '../img/talents/six-badge.jpg'},
+        {text: "Book XP Pack", img: expBooks},
+        {text: "Book Xp Chest", img: expToms},
+        {text: "Book Xp Booster", img: expCase},
+        {text: "Orb Box", img: bigCase},
+        {text: "Military Badge", img: atkBadge},
+        {text: "Research Badge", img: naukaBadge},
+        {text: "Prestige Badge", img: heartBadge},
+        {text: "Politics Badge", img: politikaBadge},
+        {text: "Almighty Badge", img: sixBadge},
     ],
 
     "tur": [
-        {text: "Kitap Tecrübesi", img: '../img/talents/exp-books.jpg'},
-        {text: "Kitap Tecrübe Sandığı", img: '../img/talents/exp-case.jpg'},
-        {text: "Kitap Tecrübe Takviyesi", img: '../img/talents/exp-toms.jpg'},
-        {text: "Küre Kutusu", img: '../img/talents/case.jpg'},
-        {text: "Güç Payesi", img: '../img/talents/atk-badge.jpg'},
-        {text: "İtibar Payesi", img: '../img/talents/nauka-badge.jpg'},
-        {text: "Bilgi Payesi", img: '../img/talents/heart-badge.jpg'},
-        {text: "Politika Payesi", img: '../img/talents/politika-badge.jpg'},
-        {text: "Süper Paye", img: '../img/talents/six-badge.jpg'},
+        {text: "Kitap Tecrübesi", img: expBooks},
+        {text: "Kitap Tecrübe Sandığı", img: expToms},
+        {text: "Kitap Tecrübe Takviyesi", img: expCase},
+        {text: "Küre Kutusu", img: bigCase},
+        {text: "Güç Payesi", img: atkBadge},
+        {text: "İtibar Payesi", img: naukaBadge},
+        {text: "Bilgi Payesi", img: heartBadge},
+        {text: "Politika Payesi", img: politikaBadge},
+        {text: "Süper Paye", img: sixBadge},
     ],
 }
 
-export const DATA_TALENTS_TEXT = [
+const DATA_TALENTS_TITLE = {
+    "rus": {title: 'Расчет Талантов', subtitle: 'Межсерверный рейтинг талантов (Богдан)'},
+    "eng": {title: 'Calculation of Talents', subtitle: 'Cross-Server Talent Rating (Bogdan)'},
+    "tur": {title: 'Yeteneklerin Hesaplanması', subtitle: 'Sunucular Arası Yetenek Derecelendirmesi (Bogdan)'},
+}
+
+const DATA_TALENTS_TEXT = [
     {
         "rus": {text: "Расчет жетонов могущества производится с учетом улучшения навыков исключительно с шестью звездами."},
         "eng": {text: "The calculation of power tokens is made taking into account the improvement of skills with six stars only."},
@@ -68,3 +84,11 @@ export const DATA_TALENTS_TEXT = [
         "tur": {text: "Maksimum Miktar - Toplama eklenecek olası maksimum tutarı gösteren bir sayı."}
     },
 ]
+
+
+
+export const DATA_TALENTS = {
+    text: DATA_TALENTS_TEXT,
+    title: DATA_TALENTS_TITLE,
+    inputs: DATA_TALENTS_INPUTS,
+}
