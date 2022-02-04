@@ -9,6 +9,7 @@
     padding: 50px 20px;
     background-color: #F6F7FB;
     box-shadow: 5px 0px 15px -5px rgba(34, 60, 80, 0.6) inset;
+    z-index: 999;
 }
 
 .Menu {

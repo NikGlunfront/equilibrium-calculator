@@ -1,0 +1,22 @@
+.PageSection {
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+.Title {
+    font-size: 40px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.SubTitle {
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.Body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

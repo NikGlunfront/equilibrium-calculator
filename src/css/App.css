@@ -1,5 +1,11 @@
 @import './reset-styles.css';
 @import 'antd/dist/antd.css';
+@import './fonts.css';
+@import './Talents-page/index.css';
+
+body {
+    font-family: 'Raleway';
+}
 
 #page {
     width: 100%;
@@ -11,9 +17,8 @@
     flex-direction: column;
     position: relative;
     min-height: 100vh;
-    height: 1500px;
     padding: 50px 0 0 180px;
-    background-color: #fcfaf7;
+    background: linear-gradient(180deg, #F6F7FB 75%, #E5DFFD);
 }
 
 .ant-select {
