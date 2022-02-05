@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../Container';
+import Container from '../Container/Container';
 import style from './Section.module.css'
 
 const Section = ({children, isFirst}) => {
@@ -27,6 +27,9 @@ Section.Title = Title;
 
 const SubTitle = (props) => <div className={style.SubTitle}>{props.children}</div>;
 Section.SubTitle = SubTitle;
+
+const Info = (props) => <div className={style.Info}>{props.children}</div>;
+Section.Info = Info;
 
 const Body = ({children}) => <div className={style.Body}>{children}</div>;
 Section.Body = Body;

@@ -20,6 +20,16 @@
     
 }
 
+.InputContainer input.PositiveInput {
+    background-color: #f97250b6;
+    color: #fff;
+}
+
+.InputContainer input:focus.PositiveInput {
+    background-color: #f1f1f1;
+    color: #5f5e5e;
+}
+
 .InputContainer input::-webkit-outer-spin-button,
 .InputContainer input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -60,4 +70,22 @@
     font-size: 13px;
     top: 15px;
     color: #f97150;
+}
+
+.Result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.Result span {
+    font-style: italic;
+    text-align: center;
+}
+
+.Result div {
+    font-size: 20px;
+    font-weight: 700;
 }

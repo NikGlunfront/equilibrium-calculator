@@ -275,6 +275,10 @@
         background-color: #fff;
     }
 
+    .MobileLangsItem .LangItem:first-child {
+        border-top: none;
+    }
+
     .MobileLangsItem .LangItem {
         border: none;
         border-top: 1px solid #9BAAD3;

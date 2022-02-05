@@ -10,46 +10,52 @@ import sixBadge from '../../img/talents/six-badge.jpg';
 
 const DATA_TALENTS_INPUTS = {
     "rus": [
-        {text: "Альманах Знаний", img: expBooks, id:'expBooks'},
-        {text: "Приказ Изучения", img: expToms, id:'expToms'},
-        {text: "Случ. приказ-изучения", img: expCase, id:'expCase'},
-        {text: "Шкатулка Сфер", img: bigCase, id:'bigCase'},
-        {text: "Жетон Тактики", img: atkBadge, id:'atkBadge'},
-        {text: "Жетон Науки", img: naukaBadge, id:'naukaBadge'},
-        {text: "Жетон Культуры", img: heartBadge, id:'heartBadge'},
-        {text: "Жетон Политики", img: politikaBadge, id:'politikaBadge'},
-        {text: "Жетон Могущества", img: sixBadge, id:'sixBadge'},
+        {text: "Альманах Знаний", img: expBooks, id:'expBooks', max: 0.25, min: 0.25},
+        {text: "Приказ Изучения", img: expToms, id:'expToms', max: 1, min: 1},
+        {text: "Случ. приказ-изучения", img: expCase, id:'expCase', max: 0.5, min: 0.05},
+        {text: "Шкатулка Сфер", img: bigCase, id:'bigCase', max: 6, min: 1},
+        {text: "Жетон Тактики", img: atkBadge, id:'atkBadge', max: 1, min: 1},
+        {text: "Жетон Науки", img: naukaBadge, id:'naukaBadge', max: 1, min: 1},
+        {text: "Жетон Культуры", img: heartBadge, id:'heartBadge', max: 1, min: 1},
+        {text: "Жетон Политики", img: politikaBadge, id:'politikaBadge', max: 1, min: 1},
+        {text: "Жетон Могущества", img: sixBadge, id:'sixBadge', max: 6, min: 6},
     ],
 
     "eng": [
-        {text: "Book XP Pack", img: expBooks, id:'expBooks'},
-        {text: "Book Xp Chest", img: expToms, id:'expToms'},
-        {text: "Book Xp Booster", img: expCase, id:'expCase'},
-        {text: "Orb Box", img: bigCase, id:'bigCase'},
-        {text: "Military Badge", img: atkBadge, id:'atkBadge'},
-        {text: "Research Badge", img: naukaBadge, id:'naukaBadge'},
-        {text: "Prestige Badge", img: heartBadge, id:'heartBadge'},
-        {text: "Politics Badge", img: politikaBadge, id:'politikaBadge'},
-        {text: "Almighty Badge", img: sixBadge, id:'sixBadge'},
+        {text: "Book XP Pack", img: expBooks, id:'expBooks', max: 0.25, min: 0.25},
+        {text: "Book Xp Chest", img: expToms, id:'expToms', max: 1, min: 1},
+        {text: "Book Xp Booster", img: expCase, id:'expCase', max: 100, min: 10},
+        {text: "Orb Box", img: bigCase, id:'bigCase', max: 6, min: 1},
+        {text: "Military Badge", img: atkBadge, id:'atkBadge', max: 1, min: 1},
+        {text: "Research Badge", img: naukaBadge, id:'naukaBadge', max: 1, min: 1},
+        {text: "Prestige Badge", img: heartBadge, id:'heartBadge', max: 1, min: 1},
+        {text: "Politics Badge", img: politikaBadge, id:'politikaBadge', max: 1, min: 1},
+        {text: "Almighty Badge", img: sixBadge, id:'sixBadge', max: 6, min: 6},
     ],
 
     "tur": [
-        {text: "Kitap Tecrübesi", img: expBooks, id:'expBooks'},
-        {text: "Kitap Tecrübe Sandığı", img: expToms, id:'expToms'},
-        {text: "Kitap Tecrübe Takviyesi", img: expCase, id:'expCase'},
-        {text: "Küre Kutusu", img: bigCase, id:'bigCase'},
-        {text: "Güç Payesi", img: atkBadge, id:'atkBadge'},
-        {text: "İtibar Payesi", img: naukaBadge, id:'naukaBadge'},
-        {text: "Bilgi Payesi", img: heartBadge, id:'heartBadge'},
-        {text: "Politika Payesi", img: politikaBadge, id:'politikaBadge'},
-        {text: "Süper Paye", img: sixBadge, id:'sixBadge'},
+        {text: "Kitap Tecrübesi", img: expBooks, id:'expBooks', max: 0.25, min: 0.25},
+        {text: "Kitap Tecrübe Sandığı", img: expToms, id:'expToms', max: 1, min: 1},
+        {text: "Kitap Tecrübe Takviyesi", img: expCase, id:'expCase', max: 100, min: 10},
+        {text: "Küre Kutusu", img: bigCase, id:'bigCase', max: 6, min: 1},
+        {text: "Güç Payesi", img: atkBadge, id:'atkBadge', max: 1, min: 1},
+        {text: "İtibar Payesi", img: naukaBadge, id:'naukaBadge', max: 1, min: 1},
+        {text: "Bilgi Payesi", img: heartBadge, id:'heartBadge', max: 1, min: 1},
+        {text: "Politika Payesi", img: politikaBadge, id:'politikaBadge', max: 1, min: 1},
+        {text: "Süper Paye", img: sixBadge, id:'sixBadge', max: 6, min: 6},
     ],
 }
 
 const DATA_TALENTS_TITLE = {
-    "rus": {title: 'Расчет Талантов', subtitle: 'Межсерверный рейтинг талантов (Богдан)'},
-    "eng": {title: 'Calculation of Talents', subtitle: 'Cross-Server Talent Rating (Bogdan)'},
-    "tur": {title: 'Yeteneklerin Hesaplanması', subtitle: 'Sunucular Arası Yetenek Derecelendirmesi (Bogdan)'},
+    "rus": {title: 'Расчет Талантов', subtitle: 'Межсерверный рейтинг талантов (Богдан)', calculateText: 'Заполните поля в соответствии с информацией в ячейках', info: 'Для получения детального расчета нажмите кнопку "Получить результат" после ввода данных'},
+    "eng": {title: 'Calculation of Talents', subtitle: 'Cross-Server Talent Rating (Bogdan)', calculateText: 'Fill in the fields according to the information in the cells', info: 'For a detailed calculation, click the "Get result" button after entering the data'},
+    "tur": {title: 'Yeteneklerin Hesaplanması', subtitle: 'Sunucular Arası Yetenek Derecelendirmesi (Bogdan)', calculateText: 'Hücrelerdeki bilgilere göre alanları doldurun', info: 'Detaylı hesaplama için verileri girdikten sonra "Sonuç al" butonuna tıklayınız.'},
+}
+
+const DATA_TALENTS_UI = {
+    "rus": {inputText: 'Прирост талантов (усредненный)', resultButton: 'Получить результат'},
+    "eng": {inputText: 'Talent growth (average)', resultButton: 'Get Result'},
+    "tur": {inputText: 'Yetenek büyümesi (ortalama)', resultButton: 'Sonuç al'},
 }
 
 const DATA_TALENTS_TEXT = [
@@ -59,9 +65,9 @@ const DATA_TALENTS_TEXT = [
         "tur": {text: "Güç belirteçlerinin hesaplanması, yalnızca altı yıldızla becerilerin geliştirilmesi dikkate alınarak yapılır."}
     },
     {
-        "rus": {text: "Расчетное количество талантов может отличаться от Среднего и Максимального количества в меньшую сторону."},
-        "eng": {text: "The estimated number of talents may differ from the Average and Maximum number to a smaller side."},
-        "tur": {text: "Hesaplanan yetenek sayısı, Ortalama ve Maksimum sayıdan daha küçük bir tarafa farklılık gösterebilir."}
+        "rus": {text: "Фактическое количество талантов может отличаться от Среднего и Максимального количества в меньшую сторону."},
+        "eng": {text: "The actual number of talents may differ from the Average and Maximum number down."},
+        "tur": {text: "Gerçek yetenek sayısı, aşağı Ortalama ve Maksimum sayıdan farklı olabilir."}
     },
     {
         "rus": {text: "Результатом вычислений являются три показателя: Минимальное количество, Среднее количество, Максимальное количество."},
@@ -91,4 +97,5 @@ export const DATA_TALENTS = {
     text: DATA_TALENTS_TEXT,
     title: DATA_TALENTS_TITLE,
     inputs: DATA_TALENTS_INPUTS,
+    ui: DATA_TALENTS_UI,
 }

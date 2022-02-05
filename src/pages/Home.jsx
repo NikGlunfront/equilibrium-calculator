@@ -1,7 +1,7 @@
 import React from 'react';
 // import { useSelector } from 'react-redux';
 import Content from '../components/Content/Content';
-import Section from '../components/Container/Section/Section';
+import Section from '../components/Section/Section';
 
 const Home = () => {
     // const {language} = useSelector(state => state.language)

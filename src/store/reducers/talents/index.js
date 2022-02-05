@@ -8,6 +8,7 @@ const initialState = {
     heartBadge: 0,
     politikaBadge: 0,
     sixBadge: 0,
+    isCalculating: false,
 }
 
 export const TalentsActions = {

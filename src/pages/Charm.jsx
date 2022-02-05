@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Section from '../components/Container/Section/Section';
+import Section from '../components/Section/Section';
 import Content from '../components/Content/Content';
 import InfoBlock from '../components/InfoBlock/InfoBlock';
 import { DATA_CHARM } from '../data/charm';
