@@ -1,5 +1,11 @@
-import language from './language'
+import language from './language';
+import talents from './talents';
+import isCalculating from './calculating';
 
-export default {
+const reducers = {
     language,
+    talents,
+    isCalculating,
 }
+
+export default reducers;

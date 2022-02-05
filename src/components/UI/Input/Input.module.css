@@ -17,6 +17,14 @@
     border: none;
     border-bottom: 2px solid #ddd;
     transition: all .3s linear;
+    
+}
+
+.InputContainer input::-webkit-outer-spin-button,
+.InputContainer input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 .InputContainer input:focus-visible {
