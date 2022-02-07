@@ -1,0 +1,10 @@
+.CalculatorBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.ResultForm {
+    display: flex;
+    flex-direction: column;
+}

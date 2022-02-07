@@ -5,10 +5,10 @@ import style from './Input.module.css';
 
 const Input = ({data, resultText}) => {
     const [value, setValue] = useState("");
-    const averageK = (data.min + data.max) / 2;
     const isCalculatingTalents = useSelector(state => state.talents.isCalculating)
     const talents = useSelector(state => state.talents)
     const {setSomeTalentsValue} = useActions()
+    const averageK = (talents[data.id]["maxConst"] + talents[data.id]["minConst"]) / 2;
 
     const onChangeInput = (e) => {
         if (typeof value === 'number' && value !== "") {
@@ -33,12 +33,12 @@ const Input = ({data, resultText}) => {
     useEffect(() => {
         if (isCalculatingTalents && data.id in talents) {
             if (value > 0) {
-                setSomeTalentsValue(data.id, Math.floor(parseInt(value) * averageK))
+                setSomeTalentsValue(data.id, Math.floor(parseInt(value)))
             } else {
                 setSomeTalentsValue(data.id, 0)
             }
         } else {
-            console.log(talents)
+            // console.log(talents[data.id])
         }
     }, [isCalculatingTalents])
 
@@ -52,12 +52,13 @@ const Input = ({data, resultText}) => {
                     onFocus={() => onFocusInput()}
                     onBlur={() => onBlurInput()}
                     type="number"
+                    inputMode='numeric'
                     placeholder={data.text}/>
                 <label>{data.text}</label>
             </div>
             <div className={style.Result}>
                 <span>{resultText}:</span> 
-                <div>~{value > 0 ? Math.floor(parseInt(value) * averageK) : 0}</div>
+                <div>{value > 0 ? "~" + Math.floor(parseInt(value) * averageK) : 0}</div>
             </div>
         </div>
     );

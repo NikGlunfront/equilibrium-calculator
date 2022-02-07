@@ -1,6 +1,7 @@
 @import './reset-styles.css';
 @import 'antd/dist/antd.css';
 @import './fonts.css';
+@import './ScrollBar.css';
 @import './Talents-page/index.css';
 
 body {

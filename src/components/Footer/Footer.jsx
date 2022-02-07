@@ -8,7 +8,7 @@ const Footer = () => {
             <Container>
                 <div className={style.footer__content}>
                     <p style={{fontSize: '13px', fontWeight: '700'}}>Equilibrium Calculator</p>
-                    <p style={{fontSize: '10px'}}>Calculator v2</p>
+                    <p style={{fontSize: '10px'}}>Calculator v2.0.1</p>
                 </div>
             </Container>
         </footer>
