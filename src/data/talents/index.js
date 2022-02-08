@@ -7,6 +7,7 @@ import heartBadge from '../../img/talents/heart-badge.jpg';
 import expCase from '../../img/talents/exp-case.jpg';
 import politikaBadge from '../../img/talents/politika-badge.jpg';
 import sixBadge from '../../img/talents/six-badge.jpg';
+import points from '../../img/talents/points.jpg';
 
 const DATA_TALENTS_INPUTS = {
     "rus": [
@@ -19,6 +20,7 @@ const DATA_TALENTS_INPUTS = {
         {text: "Жетон Культуры", img: heartBadge, id:'heartBadge'},
         {text: "Жетон Политики", img: politikaBadge, id:'politikaBadge'},
         {text: "Жетон Могущества", img: sixBadge, id:'sixBadge'},
+        {text: "Суммарное число Опыт книг Советников", img: points, id:'points'},
     ],
 
     "eng": [
@@ -31,6 +33,7 @@ const DATA_TALENTS_INPUTS = {
         {text: "Prestige Badge", img: heartBadge, id:'heartBadge'},
         {text: "Politics Badge", img: politikaBadge, id:'politikaBadge'},
         {text: "Almighty Badge", img: sixBadge, id:'sixBadge'},
+        {text: "Total number of Experience books of Advisors", img: points, id:'points'},
     ],
 
     "tur": [
@@ -43,6 +46,7 @@ const DATA_TALENTS_INPUTS = {
         {text: "Bilgi Payesi", img: heartBadge, id:'heartBadge'},
         {text: "Politika Payesi", img: politikaBadge, id:'politikaBadge'},
         {text: "Süper Paye", img: sixBadge, id:'sixBadge'},
+        {text: "Danışmanların Deneyim kitaplarının toplam sayısı", img: points, id:'points'},
     ],
 }
 

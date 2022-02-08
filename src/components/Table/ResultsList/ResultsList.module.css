@@ -9,6 +9,15 @@
 
 .Button {
     margin: 0 auto;
+    position: relative;
+    padding-right: 45px;
+}
+
+.Button svg {
+    position: absolute;
+    top: 45%;
+    right: 20px;
+    transform: translate(0, -50%);
 }
 
 .Item {

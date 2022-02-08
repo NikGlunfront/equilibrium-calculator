@@ -1,3 +1,5 @@
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Spin } from 'antd';
 import React from 'react';
 import { useState } from 'react';
@@ -28,7 +30,11 @@ const ResultsList = ({dataInputs, dataType}) => {
                 
                 isTableLoading 
                     ? <Spin size='large' tip="Wait..."/>
-                    : <Button onClick={() => makeVisible()} addClass={style.Button}>{buttonText}</Button>
+                    : 
+                    <Button onClick={() => makeVisible()} addClass={style.Button}>
+                        {buttonText}
+                        <FontAwesomeIcon icon={faSortDown} />
+                    </Button>
                 
                 :
                 dataInputs.map(item =>

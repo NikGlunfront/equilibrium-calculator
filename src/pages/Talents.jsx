@@ -26,10 +26,13 @@ const Talents = () => {
             align: 'top',
             duration: 700
         })
+        console.log(talents)
         setTimeout(() => {
             setTalentsResults()
             setIsCalculatingTalents(false)
+            console.log(talents)
         }, 1500)
+        
     }
 
     return (

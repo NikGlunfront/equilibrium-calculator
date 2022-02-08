@@ -8,6 +8,7 @@ const initialState = {
     heartBadge: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 1, minConst: 1},
     politikaBadge: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 1, minConst: 1},
     sixBadge: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 6, minConst: 6},
+    points: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 0.25, minConst: 0.25},
     isCalculating: false,
     max: 0,
     min: 0,
@@ -34,19 +35,19 @@ export default function talentsReducer (state = initialState, action) {
         case TalentsActions.SET_MAX:
             return {
                 ...state, 
-                max: state.expBooks.maxResult + state.expToms.maxResult + state.expCase.maxResult + state.bigCase.maxResult + state.atkBadge.maxResult + state.naukaBadge.maxResult + state.heartBadge.maxResult + state.politikaBadge.maxResult + state.sixBadge.maxResult
+                max: state.expBooks.maxResult + state.expToms.maxResult + state.expCase.maxResult + state.bigCase.maxResult + state.atkBadge.maxResult + state.naukaBadge.maxResult + state.heartBadge.maxResult + state.politikaBadge.maxResult + state.sixBadge.maxResult + state.points.maxResult
             }
 
         case TalentsActions.SET_MIN:
             return {
                 ...state, 
-                min: state.expBooks.minResult + state.expToms.minResult + state.expCase.minResult + state.bigCase.minResult + state.atkBadge.minResult + state.naukaBadge.minResult + state.heartBadge.minResult + state.politikaBadge.minResult + state.sixBadge.minResult
+                min: state.expBooks.minResult + state.expToms.minResult + state.expCase.minResult + state.bigCase.minResult + state.atkBadge.minResult + state.naukaBadge.minResult + state.heartBadge.minResult + state.politikaBadge.minResult + state.sixBadge.minResult + state.points.minResult
             }
 
         case TalentsActions.SET_AVG:
             return {
                 ...state, 
-                avg: state.expBooks.avgResult + state.expToms.avgResult + state.expCase.avgResult + state.bigCase.avgResult + state.atkBadge.avgResult + state.naukaBadge.avgResult + state.heartBadge.avgResult + state.politikaBadge.avgResult + state.sixBadge.avgResult
+                avg: state.expBooks.avgResult + state.expToms.avgResult + state.expCase.avgResult + state.bigCase.avgResult + state.atkBadge.avgResult + state.naukaBadge.avgResult + state.heartBadge.avgResult + state.politikaBadge.avgResult + state.sixBadge.avgResult + state.points.avgResult
             }
     
         default:
