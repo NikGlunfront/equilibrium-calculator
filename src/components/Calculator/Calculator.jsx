@@ -7,6 +7,7 @@ import Table from '../Table/Table';
 
 const Calculator = ({children}) => {
 
+
     let subComponentList = Object.keys(Calculator);
 
     let subComponents = subComponentList.map((key) => {
@@ -45,14 +46,16 @@ Calculator.ResultButton = ResultButton;
 
 
 
-const ResultForm = () => 
-    <ContentBox addStyles={{maxWidth: '100%', padding: '20px', boxShadow: "0px 0px 20px rgba(88,92, 229, 0.15)", margin: '40px auto'}}>
-        <Table>
-            <Table.Title>Общий прирост талантов</Table.Title>
-            <Table.Description>Это описание к таблице</Table.Description>
-            <Table.Body />
-        </Table>
-    </ContentBox>
+const ResultForm = ({dataType, dataInputs, textTitle, textSubtitle}) => 
+    <div id='talentResults'>
+        <ContentBox addStyles={{maxWidth: '100%', padding: '20px', boxShadow: "0px 0px 20px rgba(88,92, 229, 0.15)", margin: '40px auto'}}>
+            <Table>
+                <Table.Title>{textTitle}</Table.Title>
+                <Table.Description>{textSubtitle}</Table.Description>
+                <Table.Body dataType={dataType} dataInputs={dataInputs} />
+            </Table>
+        </ContentBox>
+    </div>
 Calculator.ResultForm = ResultForm;
 
 export default Calculator;

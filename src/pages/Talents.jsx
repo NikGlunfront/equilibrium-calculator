@@ -6,16 +6,26 @@ import InfoBlock from '../components/InfoBlock/InfoBlock';
 import { DATA_TALENTS } from '../data/talents';
 import { useActions } from '../hooks/useActions';
 import Calculator from '../components/Calculator/Calculator';
+import { DATA_TABLE } from '../data/Table';
+import { useEffect } from 'react';
+import reactScrollToComponent from 'react-scroll-to-component';
 
 const Talents = () => {
     const {language} = useSelector(state => state.language)
+    const talents = useSelector(state => state.talents)
     const {setIsCalculatingTalents, setTalentsResults} = useActions();
     const dataPageTexts = DATA_TALENTS.title[language];
     const dataInputs = DATA_TALENTS.inputs[language];
     const dataUiTexts = DATA_TALENTS.ui[language];
+    const tableTexts = DATA_TABLE.body[language]
+      
 
     const calculateTalentValues = () => {
         setIsCalculatingTalents(true)
+        reactScrollToComponent(document.getElementById('talentResults'),{
+            align: 'top',
+            duration: 700
+        })
         setTimeout(() => {
             setTalentsResults()
             setIsCalculatingTalents(false)
@@ -46,7 +56,7 @@ const Talents = () => {
                     <Calculator>
                         <Calculator.InputsField dataInputs={dataInputs} dataUiTexts={dataUiTexts} />
                         <Calculator.ResultButton onClick={() => calculateTalentValues(true)} dataUiTexts={dataUiTexts} />
-                        <Calculator.ResultForm />
+                        <Calculator.ResultForm dataType={talents} dataInputs={dataInputs} textTitle={tableTexts.title} textSubtitle={tableTexts.subtitle}/>
                     </Calculator>
                 </Section.Body>
             </Section>

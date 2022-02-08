@@ -5,21 +5,31 @@
 }
 
 .Title {
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
     text-align: center;
 }
 
 .Description {
-    font-size: 14px;
+    font-size: 18px;
     font-style: italic;
-    font-weight: 700;
     text-align: center;
+    margin-top: 20px;
 }
 
 .Body {
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .Title {
+        font-size: 18px;
+    }
+
+    .Description {
+        font-size: 16px;
+    }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import ResultsList from './ResultsList/ResultsList';
 import ResultsRow from './ResultsRow/ResultsRow';
 import style from './Table.module.css';
 
@@ -30,9 +31,10 @@ const Description = ({children}) =>
     </div>
 Table.Description = Description;
 
-const Body = () => 
+const Body = ({dataType, dataInputs}) => 
     <div className={style.Body}>
-        <ResultsRow />
+        <ResultsRow dataType={dataType} />
+        <ResultsList dataType={dataType} dataInputs={dataInputs} />
     </div>
 Table.Body = Body;
 

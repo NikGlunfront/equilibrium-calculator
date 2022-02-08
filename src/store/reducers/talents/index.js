@@ -1,7 +1,7 @@
 const initialState = {
     expBooks: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 0.25, minConst: 0.25},
     expToms: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 1, minConst: 1},
-    expCase: {maxResult: 0, minResult: 0, avgResult: 2, maxConst: 0.5, minConst: 0.05},
+    expCase: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 0.5, minConst: 0.05},
     bigCase: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 6, minConst: 1},
     atkBadge: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 1, minConst: 1},
     naukaBadge: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 1, minConst: 1},
