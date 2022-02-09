@@ -4,17 +4,18 @@ import ResultsRow from './ResultsRow/ResultsRow';
 import style from './Table.module.css';
 
 const Table = ({children}) => {
-    let subComponentList = Object.keys(Table);
+    // let subComponentList = Object.keys(Table);
 
-    let subComponents = subComponentList.map((key) => {
-        return React.Children.map(children, (child) =>
-            child.type.name === key ? child : null
-        );
-    });
+    // let subComponents = subComponentList.map((key) => {
+    //     return React.Children.map(children, (child) =>
+    //         child.type.name === key ? child : null
+    //     );
+    // });
 
     return (
         <div className={style.Table}>
-            {subComponents.map((component) => component)}
+            {/* {subComponents.map((component) => component)} */}
+            {children}
         </div>
     );
 };
