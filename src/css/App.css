@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    min-height: 1500px;
+    min-height: 100%;
     padding-left: 180px;
     padding-top: 80px;
     background: linear-gradient(180deg, #F6F7FB 75%, #E5DFFD);

@@ -72,12 +72,20 @@
     color: #f97150;
 }
 
+.InputField {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .Result {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
     font-size: 16px;
+    flex: 1;
+    justify-content: center;
 }
 
 .Result span {

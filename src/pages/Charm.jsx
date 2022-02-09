@@ -7,15 +7,52 @@ import { DATA_CHARM } from '../data/charm';
 import SectionTitle from '../components/Section/SectionTitle';
 import SectionSubtitle from '../components/Section/SectionSubtitle';
 import SectionBody from '../components/Section/SectionBody';
+import Calculator from '../components/Calculator/Calculator';
+import SectionInfo from '../components/Section/SectionInfo';
+import CalculatorInputsField from '../components/Calculator/CalculatorInputsField';
+import { DATA_TALENTS } from '../data/talents';
+import PartnersBlock from '../components/PartnersBlock/PartnersBlock';
+import { useEffect } from 'react';
+import { useActions } from '../hooks/useActions';
+import CalculatorResultsButton from '../components/Calculator/CalculatorResultsButton';
+import CalculatorResultForm from '../components/Calculator/CalculatorResultForm';
+import { DATA_TABLE } from '../data/Table';
 
 const Charm = () => {
     const {language} = useSelector(state => state.language)
+    const {partners} = useSelector(state => state.partners)
+    const charm = useSelector(state => state.charm)
+    const {setCharmResults, setIsCalculatingCharm} = useActions()
+    const dataPageTexts = DATA_TALENTS.title[language];
+    const dataInputs = DATA_CHARM.inputs[language];
+    const dataUiTexts = DATA_CHARM.ui[language];
+    const tableTexts = DATA_TABLE.body[language];
+
+    const calculateCharmValues = () => {
+        setIsCalculatingCharm(true)
+        // reactScrollToComponent(document.getElementById('talentResults'),{
+        //     align: 'top',
+        //     duration: 700
+        // })
+        setTimeout(() => {
+            setCharmResults()
+            setIsCalculatingCharm(false)
+        }, 1500)
+        
+    }
+
+    useEffect(() => {
+        console.log(charm)
+    }, [charm])
+
+
     return (
         <Content>
             <Section isFirst={true}>
                 <SectionTitle>{DATA_CHARM.title[language].title}</SectionTitle>
                 <SectionSubtitle>{DATA_CHARM.title[language].subtitle}</SectionSubtitle>
             </Section>
+
             <Section>
                 <SectionBody>
                     <div className='text-row'>
@@ -25,6 +62,22 @@ const Charm = () => {
                     </div> 
                 </SectionBody>
             </Section>
+
+            <PartnersBlock />
+
+            {(partners > 0) &&
+                <Section>
+                    <SectionSubtitle>{dataPageTexts.calculateText}</SectionSubtitle>
+                    <SectionInfo>{dataPageTexts.info}</SectionInfo>
+                    <SectionBody>
+                        <Calculator>
+                            <CalculatorInputsField dataInputs={dataInputs} dataUiTexts={dataUiTexts} />
+                            <CalculatorResultsButton onClick={() => calculateCharmValues()} dataUiTexts={dataUiTexts} />
+                            <CalculatorResultForm dataType={charm} dataInputs={dataInputs} textTitle={tableTexts.title} textSubtitle={tableTexts.subtitle}/>
+                        </Calculator>
+                    </SectionBody>
+                </Section>
+            }
         </Content>
     );
 };
