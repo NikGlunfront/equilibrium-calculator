@@ -12,11 +12,11 @@ import SectionInfo from '../components/Section/SectionInfo';
 import CalculatorInputsField from '../components/Calculator/CalculatorInputsField';
 import { DATA_TALENTS } from '../data/talents';
 import PartnersBlock from '../components/PartnersBlock/PartnersBlock';
-import { useEffect } from 'react';
 import { useActions } from '../hooks/useActions';
 import CalculatorResultsButton from '../components/Calculator/CalculatorResultsButton';
 import CalculatorResultForm from '../components/Calculator/CalculatorResultForm';
 import { DATA_TABLE } from '../data/Table';
+import reactScrollToComponent from 'react-scroll-to-component';
 
 const Charm = () => {
     const {language} = useSelector(state => state.language)
@@ -28,12 +28,14 @@ const Charm = () => {
     const dataUiTexts = DATA_CHARM.ui[language];
     const tableTexts = DATA_TABLE.body[language];
 
+    const yakor = 'charm-results';
+
     const calculateCharmValues = () => {
         setIsCalculatingCharm(true)
-        // reactScrollToComponent(document.getElementById('talentResults'),{
-        //     align: 'top',
-        //     duration: 700
-        // })
+        reactScrollToComponent(document.getElementById(yakor),{
+            align: 'top',
+            duration: 700
+        })
         setTimeout(() => {
             setCharmResults()
             setIsCalculatingCharm(false)
@@ -41,9 +43,6 @@ const Charm = () => {
         
     }
 
-    useEffect(() => {
-        console.log(charm)
-    }, [charm])
 
 
     return (
@@ -73,7 +72,7 @@ const Charm = () => {
                         <Calculator>
                             <CalculatorInputsField dataInputs={dataInputs} dataUiTexts={dataUiTexts} />
                             <CalculatorResultsButton onClick={() => calculateCharmValues()} dataUiTexts={dataUiTexts} />
-                            <CalculatorResultForm dataType={charm} dataInputs={dataInputs} textTitle={tableTexts.title} textSubtitle={tableTexts.subtitle}/>
+                            <CalculatorResultForm scrollTo={yakor} dataType={charm} dataInputs={dataInputs} textTitle={tableTexts.title} textSubtitle={tableTexts.subtitle}/>
                         </Calculator>
                     </SectionBody>
                 </Section>

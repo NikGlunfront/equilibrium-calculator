@@ -80,9 +80,9 @@ const DATA_CHARM_UI = {
 
 const DATA_CHARM_TEXT = [
     {
-        "rus": {text: "Расчет жетонов могущества производится с учетом улучшения навыков исключительно с шестью звездами."},
-        "eng": {text: "The calculation of power tokens is made taking into account the improvement of skills with six stars only."},
-        "tur": {text: "Güç belirteçlerinin hesaplanması, yalnızca altı yıldızla becerilerin geliştirilmesi dikkate alınarak yapılır."}
+        "rus": {text: "Скоро здесь появится описание..."},
+        "eng": {text: "Description coming soon..."},
+        "tur": {text: "Açıklama yakında..."}
     },
 ]
 

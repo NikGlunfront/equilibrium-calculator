@@ -9,9 +9,11 @@ const Input = ({data, resultText}) => {
     const [value, setValue] = useState("");
     const isCalculatingTalents = useSelector(state => state.talents.isCalculating)
     const isCalculatingCharm = useSelector(state => state.charm.isCalculating)
+    const isCalculatingIntimacy = useSelector(state => state.intimacy.isCalculating)
     const talents = useSelector(state => state.talents)
     const charm = useSelector(state => state.charm)
-    const {setSomeTalentsValue, setSomeCharmValue, changePartnerAmountAction} = useActions()
+    const intimacy = useSelector(state => state.intimacy)
+    const {setSomeTalentsValue, setSomeCharmValue, changePartnerAmountAction, setSomeIntimacyValue} = useActions()
     let averageK = 1;
     let partnersAmount = useSelector(state => state.partners.partners);
 
@@ -24,6 +26,21 @@ const Input = ({data, resultText}) => {
         if (charm[data.id]['maxConst']) {
             averageK = (charm[data.id]["maxConst"] + charm[data.id]["minConst"]) / 2;
         }  
+
+        if (charm[data.id] === "partners" && partnersAmount) {
+            setValue(partnersAmount);
+        }
+    }
+
+    if (data.id in intimacy) {
+
+        if (intimacy[data.id]['maxConst']) {
+            averageK = (intimacy[data.id]["maxConst"] + intimacy[data.id]["minConst"]) / 2;
+        }
+        
+        if (intimacy[data.id] === "partners" && partnersAmount) {
+            setValue(partnersAmount);
+        }
     }
 
     const onChangeInput = (e) => {
@@ -71,7 +88,21 @@ const Input = ({data, resultText}) => {
                 }
             }
         } 
-    }, [isCalculatingTalents, isCalculatingCharm])
+
+        if (data.id in intimacy) {
+            if (isCalculatingIntimacy) {
+                if (value > 0) {
+                    if (intimacy[data.id].isPartnered) {
+                        setSomeIntimacyValue(data.id, Math.floor(parseInt(value) * partnersAmount))
+                    } else {
+                        setSomeIntimacyValue(data.id, Math.floor(parseInt(value)))
+                    }
+                } else {
+                    setSomeIntimacyValue(data.id, 0)
+                }
+            }
+        } 
+    }, [isCalculatingTalents, isCalculatingCharm, isCalculatingIntimacy])
 
     return (
         <div className={style.InputField}>

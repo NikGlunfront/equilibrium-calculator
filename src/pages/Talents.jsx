@@ -26,11 +26,13 @@ const Talents = () => {
     const dataInputs = DATA_TALENTS.inputs[language];
     const dataUiTexts = DATA_TALENTS.ui[language];
     const tableTexts = DATA_TABLE.body[language]
+
+    const yakor = 'talent-results';
       
 
     const calculateTalentValues = () => {
         setIsCalculatingTalents(true)
-        reactScrollToComponent(document.getElementById('talentResults'),{
+        reactScrollToComponent(document.getElementById(yakor),{
             align: 'top',
             duration: 700
         })
@@ -69,7 +71,7 @@ const Talents = () => {
                     <Calculator>
                         <CalculatorInputsField dataInputs={dataInputs} dataUiTexts={dataUiTexts} />
                         <CalculatorResultsButton onClick={() => calculateTalentValues()} dataUiTexts={dataUiTexts} />
-                        <CalculatorResultForm dataType={talents} dataInputs={dataInputs} textTitle={tableTexts.title} textSubtitle={tableTexts.subtitle}/>
+                        <CalculatorResultForm scrollTo={yakor} dataType={talents} dataInputs={dataInputs} textTitle={tableTexts.title} textSubtitle={tableTexts.subtitle}/>
                     </Calculator>
                 </SectionBody>
             </Section>
