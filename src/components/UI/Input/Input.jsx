@@ -118,7 +118,7 @@ const Input = ({data, resultText}) => {
                     placeholder={data.text}/>
                 <label>{data.text}</label>
             </div>
-            {(data.id in charm) && (charm[data.id].isPartnered)
+            {((data.id in charm) && (charm[data.id].isPartnered))
                 ?
                 <InputPartnered 
                     data={data}
@@ -127,13 +127,22 @@ const Input = ({data, resultText}) => {
                     resultText={resultText}
                 />
                 :
-                <InputNormal 
-                    data={data}
-                    value={value}
-                    averageK={averageK}
-                    resultText={resultText}
-                    changePartnerAmountAction={changePartnerAmountAction}
-                />
+                (data.id in intimacy) && (intimacy[data.id].isPartnered)
+                    ?
+                        <InputPartnered 
+                            data={data}
+                            value={value}
+                            averageK={averageK * partnersAmount}
+                            resultText={resultText}
+                        />
+                    : 
+                        <InputNormal 
+                            data={data}
+                            value={value}
+                            averageK={averageK}
+                            resultText={resultText}
+                            changePartnerAmountAction={changePartnerAmountAction}
+                        />
             }
         </div>
     );

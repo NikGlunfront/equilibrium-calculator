@@ -10,7 +10,7 @@ const initialState = {
     casualCase: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 10, minConst: 5, isPartnered: true},
     bigCharmCase: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 10, minConst: 10, isPartnered: true},
     aromat: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 150, minConst: 50},
-    aromatCase: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 9, minConst: 7, isPartnered: true},
+    aromatCase: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 15, minConst: 1, isPartnered: true},
     ears: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 1, minConst: 1},
     earsx2: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 2, minConst: 2},
     isCalculating: false,

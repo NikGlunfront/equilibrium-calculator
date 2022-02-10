@@ -8,7 +8,7 @@ const initialState = {
     heartBadge: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 1, minConst: 1},
     politikaBadge: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 1, minConst: 1},
     sixBadge: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 6, minConst: 6},
-    points: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 0.25, minConst: 0.25},
+    points: {maxResult: 0, minResult: 0, avgResult: 0, maxConst: 0.005, minConst: 0.005},
     isCalculating: false,
     max: 0,
     min: 0,
