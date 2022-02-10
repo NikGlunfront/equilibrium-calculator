@@ -13,7 +13,7 @@ const Input = ({data, resultText}) => {
     const talents = useSelector(state => state.talents)
     const charm = useSelector(state => state.charm)
     const intimacy = useSelector(state => state.intimacy)
-    const {setSomeTalentsValue, setSomeCharmValue, changePartnerAmountAction, setSomeIntimacyValue} = useActions()
+    const {setSomeTalentsValue, setSomeCharmValue, setSomeIntimacyValue} = useActions()
     let averageK = 1;
     let partnersAmount = useSelector(state => state.partners.partners);
 
@@ -141,7 +141,6 @@ const Input = ({data, resultText}) => {
                             value={value}
                             averageK={averageK}
                             resultText={resultText}
-                            changePartnerAmountAction={changePartnerAmountAction}
                         />
             }
         </div>

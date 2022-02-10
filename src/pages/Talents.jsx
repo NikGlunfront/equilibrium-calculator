@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import Section from '../components/Section/Section';
 import Content from '../components/Content/Content';
@@ -42,10 +42,6 @@ const Talents = () => {
         }, 1500)
         
     }
-
-    useEffect(() => {
-        console.log(talents)
-    }, [talents])
 
     return (
         <Content>

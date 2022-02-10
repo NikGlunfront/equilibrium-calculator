@@ -30,6 +30,7 @@ const Proximity = () => {
     const tableTexts = DATA_TABLE.body[language];
 
     const yakor = 'intimacy-results';
+    const intYakor = 'proximity-inputs';
 
     const calculateIntimacyValues = () => {
         setIsCalculatingIntimacy(true)
@@ -64,7 +65,7 @@ const Proximity = () => {
             <PartnersBlock />
 
             {(partners > 0) &&
-                <Section>
+                <Section yakor={intYakor}>
                     <SectionSubtitle>{dataPageTexts.calculateText}</SectionSubtitle>
                     <SectionInfo>{dataPageTexts.info}</SectionInfo>
                     <SectionBody>

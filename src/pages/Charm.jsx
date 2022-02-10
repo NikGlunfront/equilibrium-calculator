@@ -29,6 +29,7 @@ const Charm = () => {
     const tableTexts = DATA_TABLE.body[language];
 
     const yakor = 'charm-results';
+    const charmYakor = 'charm-inputs';
 
     const calculateCharmValues = () => {
         setIsCalculatingCharm(true)
@@ -65,7 +66,7 @@ const Charm = () => {
             <PartnersBlock />
 
             {(partners > 0) &&
-                <Section>
+                <Section yakor={charmYakor}>
                     <SectionSubtitle>{dataPageTexts.calculateText}</SectionSubtitle>
                     <SectionInfo>{dataPageTexts.info}</SectionInfo>
                     <SectionBody>
