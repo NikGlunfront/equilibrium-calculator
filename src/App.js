@@ -6,6 +6,7 @@ import './UI/FontAwesome/fontawesome';
 import './css/App.css'
 import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header/Header';
+import ModalWindow from './components/Modal/ModalWindow';
 
 
 const App = () => {
@@ -14,6 +15,8 @@ const App = () => {
             <Header />
             
             <Sidebar />
+
+            {/* <ModalWindow /> */}
 
             <AppRouter/>
 
