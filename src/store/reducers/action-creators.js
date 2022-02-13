@@ -2,6 +2,7 @@ import { CalculatingActionCreators } from "./calculating/actionCreators";
 import { CharmActionCreators } from "./charm/actionCreators";
 import { IntimacyActionCreators } from "./intimacy/actionCreators";
 import { LanguageActionCreators } from "./language/actionCreators";
+import { ModalsActionCreators } from "./modals/actionCreators";
 import { PartnerActionCreators } from "./partners/actionCreators";
 import { TalentsActionCreators } from "./talents/actionCreators";
 
@@ -12,4 +13,5 @@ export const allActionCreators = {
     ...CharmActionCreators,
     ...IntimacyActionCreators,
     ...CalculatingActionCreators,
+    ...ModalsActionCreators,
 }

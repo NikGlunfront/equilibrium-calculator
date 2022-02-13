@@ -4,6 +4,7 @@ import partners from './partners';
 import charm from './charm';
 import intimacy from './intimacy';
 import isCalculating from './calculating';
+import modals from './modals';
 
 const reducers = {
     language,
@@ -11,6 +12,7 @@ const reducers = {
     charm,
     intimacy,
     partners,
+    modals,
     isCalculating,
 }
 
