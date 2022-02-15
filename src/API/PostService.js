@@ -1,28 +1,55 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export default class PostService {
-//     static async getAll(limit = 10, page = 1) {
-//         const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
-//             params : {
-//                 _limit: limit,
-//                 _page: page,
-//             }
-//         });
-//         return response
-//     }
+const apiUrls = {
+    addLangUrl: 'http://94.137.242.252:7777/api/TextBlocks/AddLanguage',
+    addPageTabUrl: 'http://94.137.242.252:7777/api/TextBlocks/AddTab',
+    addTextOnPageUrl: 'http://94.137.242.252:7777/api/TextBlocks/AddTextBlockToTab',
+}
 
-//     static async getById(id) {
-//         const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id);
-        
-//         return response
-//     }
+export default class PostTextService {
+    static async addLang () {
+        axios({
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            url: apiUrls.addLangUrl,
+            data: {
+                texts: [
+                    {language: 'rus', text: 'какой-то текст'},
+                    {language: 'eng', text: 'some text'},
+                    {language: 'tur', text: 'turk-text here'},
+                ],
+                tab: 'talents'
+            }
+        });
+    }
 
-//     static async getCommentsById(id) {
-//         const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id + '/comments');
-        
-//         return response
-//     }
-// }
+    static async addPageTab (tabName) {
+        axios({
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            url: apiUrls.addPageTabUrl,
+            data: {
+                tab: tabName
+            }
+        });
+    }
+
+    static async addTextOnPage () {
+        axios({
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            url: apiUrls.addTextOnPageUrl,
+            data: {
+                texts: [
+                    {language: 'rus', text: 'какой-то текст'},
+                    {language: 'eng', text: 'some text'},
+                    {language: 'tur', text: 'turk-text here'},
+                ],
+                tab: 'talents'
+            }
+        });
+    }
+}
 
 
 // example

@@ -25,7 +25,7 @@ const Header = () => {
 
     const sendReview = (e) => {
         e.preventDefault()
-        getReviews()
+        // getReviews()
     }
     return (
         <header className={style.Header}>

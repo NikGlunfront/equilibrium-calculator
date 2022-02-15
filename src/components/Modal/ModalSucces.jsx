@@ -3,19 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './ModalWindow.module.css';
 import React from 'react';
 import Button from '../UI/button/Button';
-import { useActions } from '../../hooks/useActions';
 
-const ModalSucces = ({succes}) => {
-    const {changeModalVisibility} = useActions()
+const ModalSucces = ({succes, reference, closeModal}) => {
+
     if (!succes) {
         return null;
     }
     return (
-        <div className={style.ModalSucces}>
+        <div ref={reference} className={style.ModalSucces}>
             <FontAwesomeIcon icon={faCheckCircle} />
             <span>Ваш отзыв был успешно отправлен!</span>
             <span>Спасибо за Вашу обратную связь!</span>
-            <Button onClick={() => changeModalVisibility(false)}>Ок</Button>
+            <Button onClick={() => closeModal()}>Хорошо</Button>
         </div>
     );
 };

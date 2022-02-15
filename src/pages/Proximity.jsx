@@ -48,8 +48,8 @@ const Proximity = () => {
     return (
         <Content>
             <Section isFirst={true}>
-                <SectionTitle>{DATA_CHARM.title[language].title}</SectionTitle>
-                <SectionSubtitle>{DATA_CHARM.title[language].subtitle}</SectionSubtitle>
+                <SectionTitle>{DATA_INTIMICY.title[language].title}</SectionTitle>
+                <SectionSubtitle>{DATA_INTIMICY.title[language].subtitle}</SectionSubtitle>
             </Section>
 
             <Section>

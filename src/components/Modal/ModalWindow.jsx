@@ -1,9 +1,10 @@
-import { faXRay } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
+import { Spin } from 'antd';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import PostTextService from '../../API/PostService';
 import { useActions } from '../../hooks/useActions';
 import Button from '../UI/button/Button';
 import ModalSucces from './ModalSucces';
@@ -11,9 +12,29 @@ import style from './ModalWindow.module.css';
 
 const ModalWindow = ({content}) => {
     const [valueText, setValueText] = useState('');
-    const [succes, setSucces] = useState(true);
+    const [succes, setSucces] = useState(false);
+    const [pendingForm, setPendingForm] = useState(false);
     const isModalVisible = useSelector(state => state.modals.isModalVisible)
     const {changeModalVisibility} = useActions()
+
+    const modalRef = useRef()
+    const modalSuccesRef = useRef()
+
+    const closeModal = () => {
+        changeModalVisibility(false)
+        setSucces(false)
+        setValueText('')
+    }
+
+    const bckgCloseModal = (e) => {
+        if (modalRef.current) {
+            if (modalSuccesRef.current) {
+                !(modalSuccesRef.current.contains(e.target) || modalRef.current.contains(e.target)) && closeModal();
+            } else {
+                !modalRef.current.contains(e.target) && closeModal();
+            }
+        }
+    }
     
     const onChange = (e) => {
         setValueText(e.target.value)
@@ -21,22 +42,12 @@ const ModalWindow = ({content}) => {
     
     const handleFormSubmit = async (e) => {
         e.preventDefault()
-        let addLangUrl = 'http://94.137.242.252:7777/api/TextBlocks/AddLanguage'
-        let addPageTabUrl = 'http://94.137.242.252:7777/api/TextBlocks/AddTab'
-        let addTextOnPageUrl = 'http://94.137.242.252:7777/api/TextBlocks/AddTextBlockToTab'
-        axios({
-            method: 'post',
-            headers: { 'content-type': 'application/json' },
-            url: addTextOnPageUrl,
-            data: {
-                texts: [
-                    {language: 'rus', text: 'какой-то текст'},
-                    {language: 'eng', text: 'some text'},
-                    {language: 'tur', text: 'turk-text here'},
-                ],
-                tab: 'talents'
-            }
-        });
+        // PostTextService.addPageTab('talents')
+        setPendingForm(true)
+        setTimeout(() => {
+            setSucces(true)
+            setPendingForm(false)
+        }, 1000);
     }
     
     if (!isModalVisible) {
@@ -44,22 +55,27 @@ const ModalWindow = ({content}) => {
     }
 
     return (
-        <div className={style.Modal}>
-            <Button addClass={style.CloseButton} onClick={() => changeModalVisibility(false)} >
-                <FontAwesomeIcon style={{color: '#fff'}} icon={faXRay} />
-            </Button>
-            {/* {content} */}
-            <form onSubmit={(e) => handleFormSubmit(e)}>
-                <span>Введите ваш отзыв в окне, расположенном ниже:</span>
-                <textarea 
-                    value={valueText}
-                    onChange={(e) => onChange(e)}
-                    name='review' 
-                    placeholder='Введите отзыв...'
-                ></textarea>
-                <Button >Отправить отзыв</Button>
-            </form>
-            <ModalSucces succes={succes}/>
+        <div className={style.ModalWrapper} onClick={(e) => bckgCloseModal(e)}>
+            <div ref={modalRef} className={style.ModalWindow}>
+                <Button addClass={style.CloseButton} onClick={() => closeModal()} >
+                    <FontAwesomeIcon style={{color: '#fff'}} icon={faTimesCircle} />
+                </Button>
+                {/* {content} */}
+                <form onSubmit={(e) => handleFormSubmit(e)}>
+                    <span>Введите ваш отзыв в окне, расположенном ниже:</span>
+                    <textarea 
+                        value={valueText}
+                        onChange={(e) => onChange(e)}
+                        name='review' 
+                        placeholder='Введите отзыв...'
+                    ></textarea>
+                    <Button >
+                        <span>Отправить отзыв</span>
+                        {pendingForm && <Spin className={style.Spin} />}
+                    </Button>
+                </form>
+            </div>
+            <ModalSucces reference={modalSuccesRef} succes={succes} closeModal={closeModal}/>
         </div>
     );
 };
